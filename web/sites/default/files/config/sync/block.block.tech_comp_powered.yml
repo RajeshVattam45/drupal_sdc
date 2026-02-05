@@ -1,0 +1,22 @@
+uuid: 698f81ad-673b-4b8d-8e24-688f63726bd8
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tech_comp
+_core:
+  default_config_hash: eYL19CLDyinGTWYQfBD1DswWzglEotE_kHnHx3AxTXM
+id: tech_comp_powered
+theme: tech_comp
+region: header
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  label_display: '0'
+  provider: system
+visibility: {  }

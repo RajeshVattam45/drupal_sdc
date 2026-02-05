@@ -1,0 +1,5 @@
+{{ include('@tech_comp/components/accordion-item/accordion-item.twig', {
+  title: content.field_accordion_title|render,
+  description: content.field_accordion_description|render,
+  links: content.field_accordion_item|render
+}) }}

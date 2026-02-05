@@ -1,0 +1,37 @@
+uuid: bcd47154-6cb6-4a87-8cc2-e5726b47d3c4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_accordion_ref
+    - node.type.profile
+    - paragraphs.paragraphs_type.accordion_group
+  module:
+    - entity_reference_revisions
+id: node.profile.field_accordion_ref
+field_name: field_accordion_ref
+entity_type: node
+bundle: profile
+label: 'Accordion Ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion_group: accordion_group
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_group:
+        weight: 4
+        enabled: true
+      accordion_item:
+        weight: 5
+        enabled: false
+      simple_card:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

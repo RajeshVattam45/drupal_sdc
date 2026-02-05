@@ -1,0 +1,20 @@
+.simple-card {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 8px;
+  max-width: 400px;
+}
+
+.simple-card__title {
+  margin-bottom: 8px;
+}
+
+.simple-card__button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #005cfa;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+}

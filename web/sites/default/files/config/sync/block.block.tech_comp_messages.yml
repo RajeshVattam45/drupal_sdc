@@ -1,0 +1,22 @@
+uuid: 8f33e050-67c3-4a2b-9605-62073946d91a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - tech_comp
+_core:
+  default_config_hash: BZ5tpW7H8X4PVGRm3MImTIHd2tN0eF7zOtp4SpRYUA0
+id: tech_comp_messages
+theme: tech_comp
+region: header
+weight: -5
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: 'Status messages'
+  label_display: '0'
+  provider: system
+visibility: {  }

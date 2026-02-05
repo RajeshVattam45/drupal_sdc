@@ -1,0 +1,28 @@
+name: Simple Card
+description: Displays a title, description and a button
+
+library:
+  css:
+    component:
+      simple-card.css: {}
+
+props:
+  title:
+    type: string
+    label: Title
+    default: 'Default title'
+
+  description:
+    type: string
+    label: Description
+    default: 'Default description text'
+
+  button_text:
+    type: string
+    label: Button text
+    default: 'Read more'
+
+  button_url:
+    type: string
+    label: Button URL
+    default: '#'

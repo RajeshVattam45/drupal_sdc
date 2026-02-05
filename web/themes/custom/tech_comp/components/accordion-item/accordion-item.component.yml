@@ -1,0 +1,12 @@
+name: Accordion Item
+description: One accordion item with title, description and up to two links
+
+props:
+  title:
+    type: string
+  description:
+    type: string
+  link_1:
+    type: string
+  link_2:
+    type: string

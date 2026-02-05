@@ -1,0 +1,18 @@
+<div class="accordion-item">
+  <button class="accordion-item__header">
+    <span class="accordion-item__title">{{ title }}</span>
+    <span class="accordion-item__icon">⌄</span>
+  </button>
+
+  <div class="accordion-item__content">
+    <div class="accordion-item__description">
+      {{ description }}
+    </div>
+
+    {% if links %}
+      <div class="accordion-item__links">
+        {{ links }}
+      </div>
+    {% endif %}
+  </div>
+</div>

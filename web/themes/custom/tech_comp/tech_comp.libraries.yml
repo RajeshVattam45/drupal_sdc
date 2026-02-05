@@ -1,0 +1,25 @@
+global:
+  js:
+    js/tech-comp.js: {}
+  css:
+    base:
+      css/base/elements.css: {}
+    component:
+      css/component/buttons.css: {}
+    layout:
+      css/layout/layout.css: {}
+    theme:
+      css/theme/print.css: { media: print }
+
+simple-card:
+  css:
+    component:
+      components/simple-card/simple-card.css: {}
+
+accordion:
+  css:
+    component:
+      components/accordion-item/accordion-item.css: {}
+  js:
+    components/accordion-item/accordion-item.js: {}
+
