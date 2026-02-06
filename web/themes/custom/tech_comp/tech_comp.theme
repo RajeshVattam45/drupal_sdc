@@ -10,64 +10,6 @@ declare(strict_types=1);
 use Drupal\Core\Url;
 
 /**
- * Preprocess accordion group paragraph.
- */
-function tech_comp_preprocess_paragraph__accordion_group(array &$variables): void {
-  $paragraph = $variables['paragraph'];
-  $items = [];
-
-  if (
-    $paragraph->hasField('field_accordion_items') &&
-    !$paragraph->get('field_accordion_items')->isEmpty()
-  ) {
-    foreach ($paragraph->get('field_accordion_items') as $ref) {
-      /** @var \Drupal\paragraphs\Entity\Paragraph $item */
-      $item = $ref->entity;
-      if (!$item) {
-        continue;
-      }
-
-      // Title
-      $title = $item->get('field_accordion_title')->value ?? '';
-
-      // Description (formatted text, safely filtered)
-      $description = '';
-      if (!$item->get('field_accordion_description')->isEmpty()) {
-        $description = check_markup(
-          $item->get('field_accordion_description')->value,
-          $item->get('field_accordion_description')->format
-        );
-      }
-
-      // Links
-      $links = [];
-      if (
-        $item->hasField('field_accordion_item') &&
-        !$item->get('field_accordion_item')->isEmpty()
-      ) {
-        foreach ($item->get('field_accordion_item') as $link_item) {
-          if ($link_item->uri) {
-            $links[] = [
-              'url' => Url::fromUri($link_item->uri)->toString(),
-              'title' => $link_item->title ?? 'Read more',
-            ];
-          }
-        }
-      }
-
-      $items[] = [
-        'title' => $title,
-        'description' => $description,
-        'links' => $links,
-      ];
-    }
-  }
-
-  // Expose clean data to Twig / SDC
-  $variables['accordion_items'] = $items;
-}
-
-/**
  * Implements hook_preprocess_HOOK() for html.html.twig.
  */
 function tech_comp_preprocess_html(array &$variables): void {}

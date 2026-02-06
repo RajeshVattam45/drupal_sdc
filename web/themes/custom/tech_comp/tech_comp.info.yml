@@ -7,7 +7,8 @@ core_version_requirement: ^10 || ^11
 libraries:
   - tech_comp/global
   - tech_comp/simple-card
-  - tech_comp/accordion
+  - tech_comp/bootstrap
+
 regions:
   header: 'Header'
   primary_menu: 'Primary menu'

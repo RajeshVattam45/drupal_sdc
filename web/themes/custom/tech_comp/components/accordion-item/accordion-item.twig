@@ -1,10 +1,25 @@
-<div class="accordion-item">
-  <button class="accordion-item__header">
+{{ attach_library('tech_comp/accordion') }}
+{% set accordion_id = 'accordion-item-' ~ random() %}
+
+<div class="accordion-item" data-accordion-item>
+  <button
+    class="accordion-item__header"
+    type="button"
+    aria-expanded="false"
+    aria-controls="{{ accordion_id }}"
+    data-accordion-trigger
+  >
     <span class="accordion-item__title">{{ title }}</span>
-    <span class="accordion-item__icon">⌄</span>
+    <span class="accordion-item__icon" aria-hidden="true"></span>
   </button>
 
-  <div class="accordion-item__content">
+  <div
+    id="{{ accordion_id }}"
+    class="accordion-item__content"
+    role="region"
+    aria-hidden="true"
+    data-accordion-content
+  >
     <div class="accordion-item__description">
       {{ description }}
     </div>
