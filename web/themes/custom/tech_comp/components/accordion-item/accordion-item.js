@@ -7,22 +7,20 @@
 
       // Use once() to ensure the click handler is attached.
       // only one time per accordion header, This prevents duplicate event listeners.
-      once('accordion-item', '.accordion-item__header', context)
-        .forEach((header) => {
+      once('accordion-item', '[data-accordion-trigger]', context)
+        .forEach((trigger) => {
 
-          // Attach click event to the accordion header button
-          header.addEventListener('click', function () {
-            const item = header.closest('.accordion-item');
+          trigger.addEventListener('click', () => {
+            const item = trigger.closest('[data-accordion-item]');
 
-            // Close all other accordion items.
-            // This ensures only one accordion is open at a time.
-            document.querySelectorAll('.accordion-item').forEach((el) => {
+            // Close all other accordion items (same behavior as before)
+            document.querySelectorAll('[data-accordion-item]').forEach((el) => {
               if (el !== item) {
                 el.classList.remove('is-open');
               }
             });
 
-            // Toggle the current accordion item's open state.
+            // Toggle current accordion
             item.classList.toggle('is-open');
           });
 
