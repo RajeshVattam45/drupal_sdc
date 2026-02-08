@@ -1,0 +1,37 @@
+uuid: 1af01cd7-c123-4d53-8327-5d41f7ab229e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_basic_accordion_block
+    - node.type.page
+    - paragraphs.paragraphs_type.accordion_group
+  module:
+    - entity_reference_revisions
+id: node.page.field_basic_accordion_block
+field_name: field_basic_accordion_block
+entity_type: node
+bundle: page
+label: 'Basic Accordion Block'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      accordion_group: accordion_group
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_group:
+        weight: 4
+        enabled: true
+      accordion_item:
+        weight: 5
+        enabled: false
+      simple_card:
+        weight: 6
+        enabled: false
+field_type: entity_reference_revisions

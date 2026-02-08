@@ -1,0 +1,8 @@
+uuid: 2e9c519a-7602-4699-9d5f-3d98ef67f06f
+langcode: en
+status: true
+dependencies: {  }
+id: accordion_block
+label: 'Accordion Block'
+revision: false
+description: null
