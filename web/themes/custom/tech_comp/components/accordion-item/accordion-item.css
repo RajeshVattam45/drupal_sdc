@@ -1,14 +1,31 @@
-/* Wrapper card */
+/* =====================================================
+   ACCORDION – BASE VARIABLES (DEFAULT THEME)
+   ===================================================== */
+
+.accordion-block {
+  --accordion-bg: #ffffff;
+  --accordion-bg-hover: #f3f4f6;
+  --accordion-text: #111827;
+  --accordion-border: #d1d5db;
+  --accordion-link: #2563eb;
+
+  padding: 1.25rem;
+  border-radius: 6px;
+}
+
+/* =====================================================
+   ACCORDION ITEM – BASE STYLES
+   ===================================================== */
+
 .accordion-item {
-  margin-bottom: 12px;
   overflow: hidden;
-  background: #fff;
-  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  background-color: var(--accordion-bg);
+  border: 1px solid var(--accordion-border);
+  transition: box-shadow 0.3s ease;
 }
 
 .accordion-item:hover {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  border-color: #d1d5db;
 }
 
 /* Header */
@@ -18,17 +35,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #f9fafb;
+  background-color: var(--accordion-bg);
   border: none;
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
-  color: #111827;
+  color: var(--accordion-text);
   transition: background 0.3s ease;
 }
 
 .accordion-item__header:hover {
-  background: #f3f4f6;
+  background-color: var(--accordion-bg-hover);
 }
 
 .accordion-item__header:focus {
@@ -36,56 +53,94 @@
   box-shadow: inset 0 0 0 2px #2563eb;
 }
 
-/* Chevron icon */
-/* Icon container */
+/* Icon */
 .accordion-item__icon {
   font-size: 20px;
   font-weight: 700;
   line-height: 1;
 }
 
-/* Default (closed) icon */
 .accordion-item__icon::before {
   content: "+";
 }
 
-/* Open state icon */
 .accordion-item.is-open .accordion-item__icon::before {
   content: "−";
 }
 
-/* Content animation */
+/* Content */
 .accordion-item__content {
   max-height: 0;
   overflow: hidden;
   padding: 0 18px;
+  background-color: var(--accordion-bg);
   transition: max-height 0.35s ease, padding 0.35s ease;
 }
 
-/* Open state */
 .accordion-item.is-open .accordion-item__content {
-  max-height: 500px; /* enough for content */
+  max-height: 500px;
   padding: 16px 18px 20px;
 }
 
 /* Description */
 .accordion-item__description {
-  color: #374151;
+  color: var(--accordion-text);
   line-height: 1.6;
   margin-bottom: 12px;
 }
 
-/* Links */
-.accordion-item__links a {
-  display: inline-block;
-  margin-right: 12px;
-  margin-top: 6px;
-  font-size: 14px;
-  color: #2563eb;
-  text-decoration: none;
-  font-weight: 500;
+/* =====================================================
+   THEME DEFINITIONS (ONLY VARIABLES CHANGE)
+   ===================================================== */
+
+/* WHITE (default) */
+.accordion-block.theme-white {
+  --accordion-bg: #ffffff;
+  --accordion-bg-hover: #f3f4f6;
+  --accordion-text: #111827;
+  --accordion-border: #d1d5db;
+  --accordion-link: #2563eb;
 }
 
-.accordion-item__links a:hover {
-  text-decoration: underline;
+/* BLACK / DARK */
+.accordion-block.theme-black {
+  --accordion-bg: #212529;
+  --accordion-bg-hover: #1c1f23;
+  --accordion-text: #ffffff;
+  --accordion-border: rgba(255, 255, 255, 0.15);
+  --accordion-link: #93c5fd;
+}
+
+/* BLUE (TEST / FUTURE READY) */
+.accordion-block.theme-blue {
+  --accordion-bg: #2563eb;
+  --accordion-bg-hover: #1d4ed8;
+  --accordion-text: #ffffff;
+  --accordion-border: rgba(255, 255, 255, 0.25);
+  --accordion-link: #bfdbfe;
+}
+
+/* =====================================================
+   LAYOUT BUILDER – EDIT MODE PREVIEW (ADMIN ONLY)
+   ===================================================== */
+
+.layout-builder .accordion-block {
+  border: 1px dashed #cfd4d9;
+  padding: 1rem;
+}
+
+/* Soften strong themes in editor preview */
+.layout-builder .accordion-block.theme-black,
+.layout-builder .accordion-block.theme-blue {
+  background-color: #f1f3f5;
+  color: #000000;
+}
+
+.layout-builder .accordion-block::before {
+  content: "Accordion Block (Layout Preview)";
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c757d;
+  margin-bottom: 8px;
 }

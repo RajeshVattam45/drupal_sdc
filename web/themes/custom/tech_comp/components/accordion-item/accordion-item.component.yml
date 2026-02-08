@@ -4,8 +4,7 @@ description: One accordion item with title, description and up to two links
 props:
   title:
     type: string
+    required: true
+
   description:
     type: string
-  links:
-    type: object
-    required: false

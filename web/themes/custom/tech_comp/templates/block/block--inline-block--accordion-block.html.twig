@@ -1,0 +1,12 @@
+{#
+  Inline block template for Accordion Block (Layout Builder)
+#}
+
+{% set theme = content.field_block_type['#items'].0.value ?? 'white' %}
+
+<div{{ attributes.addClass('accordion-block', 'theme-' ~ theme) }}>
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  {{ content|without('field_block_type') }}
+</div>
