@@ -34,3 +34,13 @@ accordion:
     - core/once
     - tech_comp/bootstrap
 
+slider:
+  css:
+    component:
+      components/slider/slider.css: {}
+  js:
+    components/slider/slider.js: {}
+  dependencies:
+    - core/drupal
+    - core/once
+    - tech_comp/bootstrap

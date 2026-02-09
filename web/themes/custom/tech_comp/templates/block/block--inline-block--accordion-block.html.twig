@@ -2,11 +2,34 @@
   Inline block template for Accordion Block (Layout Builder)
 #}
 
-{% set theme = content.field_block_type['#items'].0.value ?? 'white' %}
+{# Safely determine theme value #}
+{% set theme = 'white' %}
+{% if content.field_block_type is defined
+  and content.field_block_type['#items'] is defined
+  and content.field_block_type['#items']|length > 0
+  and content.field_block_type['#items'].0.value is not empty
+%}
+  {% set theme = content.field_block_type['#items'].0.value %}
+{% endif %}
 
-<div{{ attributes.addClass('accordion-block', 'theme-' ~ theme) }}>
-  {{ title_prefix }}
-  {{ title_suffix }}
+{# Safely render block only if there is content #}
+{% set accordion_items = content|without('field_block_type') %}
 
-  {{ content|without('field_block_type') }}
-</div>
+{% if accordion_items %}
+  <div{{ attributes.addClass('accordion-block', 'theme-' ~ theme) }}
+       data-accordion-group>
+
+    {{ title_prefix }}
+    {{ title_suffix }}
+
+    {{ accordion_items }}
+
+  </div>
+{% else %}
+  {# Layout Builder / editor fallback #}
+  {% if is_admin %}
+    <div class="accordion-block accordion-block--empty">
+      <em>No accordion items added.</em>
+    </div>
+  {% endif %}
+{% endif %}

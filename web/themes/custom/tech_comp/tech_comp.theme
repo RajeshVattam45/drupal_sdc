@@ -8,6 +8,26 @@ declare(strict_types=1);
  */
 
 use Drupal\Core\Url;
+use Drupal\Core\Render\Markup;
+
+function tech_comp_preprocess_paragraph(array &$variables) {
+  if (empty($variables['paragraph'])) {
+    return;
+  }
+
+  $bundle = $variables['paragraph']->bundle();
+
+  switch ($bundle) {
+    case 'accordion_item':
+      $variables['#attached']['library'][] = 'tech_comp/accordion-item';
+      break;
+
+    case 'home_page_slider':
+    case 'home_page_slider_group':
+      $variables['#attached']['library'][] = 'tech_comp/slider';
+      break;
+  }
+}
 
 /**
  * Implements hook_preprocess_HOOK() for html.html.twig.
