@@ -1,0 +1,30 @@
+uuid: fb32ae8d-3b7d-4d11-8980-c2a72b9641f5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.profile.field_accordion_ref
+    - node.type.profile
+  module:
+    - entity_reference_revisions
+    - user
+id: node.profile.default
+targetEntityType: node
+bundle: profile
+mode: default
+content:
+  field_accordion_ref:
+    type: entity_reference_revisions_entity_view
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

@@ -1,0 +1,21 @@
+uuid: 884b2a84-3543-4366-875c-532f5b760d13
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.accordion_block
+    - field.storage.block_content.field_block_type
+  module:
+    - options
+id: block_content.accordion_block.field_block_type
+field_name: field_block_type
+entity_type: block_content
+bundle: accordion_block
+label: 'Block Type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_string

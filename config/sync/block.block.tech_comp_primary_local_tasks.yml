@@ -1,0 +1,22 @@
+uuid: beaeda3c-6baf-4f77-848f-66d6396f8fec
+langcode: en
+status: true
+dependencies:
+  theme:
+    - tech_comp
+_core:
+  default_config_hash: nGE3EoPQQaQCuqTUtZgw0-KIzmrqdKDzdNQf2JyPUt4
+id: tech_comp_primary_local_tasks
+theme: tech_comp
+region: header
+weight: -4
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: 'Primary tabs'
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: false
+visibility: {  }
