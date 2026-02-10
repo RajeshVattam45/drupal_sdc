@@ -1,0 +1,63 @@
+<div
+  class="slider container-fluid"
+  data-slider
+>
+  <div class="row align-items-center">
+    <div class="col-md-6 slider__content">
+      {% for slide in slides %}
+        <div
+          class="slider__item {% if loop.first %}is-active{% endif %}"
+          data-slider-item
+          data-index="{{ loop.index0 }}"
+          {% if not loop.first %}hidden{% endif %}
+        >
+          <h2>{{ slide.heading }}</h2>
+
+          <div class="slider__description">
+            {{ slide.description|raw }}
+          </div>
+
+          {% if slide.cta %}
+            <a
+              href="{{ slide.cta.url }}"
+              class="btn btn-primary mt-3"
+            >
+              {{ slide.cta.title }}
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="col-md-6 slider__image">
+      {% for slide in slides %}
+        <div
+          class="slider__image-item {% if loop.first %}is-active{% endif %}"
+          data-slider-image
+          data-index="{{ loop.index0 }}"
+          {% if not loop.first %}hidden{% endif %}
+        >
+          <img src="{{ slide.image }}" class="img-fluid" alt="">
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="slider__controls">
+    <button
+      type="button"
+      class="slider__arrow slider__arrow--left"
+      data-slider-prev
+    >
+      ‹
+    </button>
+
+    <button
+      type="button"
+      class="slider__arrow slider__arrow--right"
+      data-slider-next
+    >
+      ›
+    </button>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+uuid: b6540feb-4f6d-47c1-b0d0-37719bb29580
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.home_page_slider_block
+    - field.storage.block_content.field_home_page_slider_ref
+    - paragraphs.paragraphs_type.home_page_slider
+  module:
+    - entity_reference_revisions
+id: block_content.home_page_slider_block.field_home_page_slider_ref
+field_name: field_home_page_slider_ref
+entity_type: block_content
+bundle: home_page_slider_block
+label: 'Home Page Slider Ref'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      home_page_slider: home_page_slider
+    negate: 0
+    target_bundles_drag_drop:
+      accordion_item:
+        weight: 5
+        enabled: false
+      home_page_slider:
+        weight: 6
+        enabled: true
+      link:
+        weight: 7
+        enabled: false
+      simple_card:
+        weight: 8
+        enabled: false
+field_type: entity_reference_revisions

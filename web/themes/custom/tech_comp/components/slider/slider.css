@@ -1,0 +1,25 @@
+.slider {
+  position: relative;
+}
+
+.slider__controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.slider__arrow {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #000;
+  background: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.slider__arrow:hover {
+  background: #000;
+  color: #fff;
+}

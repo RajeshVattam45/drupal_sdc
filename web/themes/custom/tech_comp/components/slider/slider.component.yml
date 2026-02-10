@@ -1,0 +1,25 @@
+name: Home Page Slider
+description: Hero slider with image, text and CTA
+status: stable
+
+props:
+  type: object
+  properties:
+    slides:
+      type: array
+      items:
+        type: object
+        properties:
+          heading:
+            type: string
+          description:
+            type: string
+          image:
+            type: string
+          cta:
+            type: object
+            properties:
+              title:
+                type: string
+              url:
+                type: string

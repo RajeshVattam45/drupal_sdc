@@ -1,0 +1,8 @@
+uuid: 219917b1-076c-4980-bd3a-46dc122472ea
+langcode: en
+status: true
+dependencies: {  }
+id: home_page_slider_block
+label: 'Home Page Slider Block'
+revision: false
+description: null

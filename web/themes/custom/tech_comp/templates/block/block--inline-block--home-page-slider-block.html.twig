@@ -1,0 +1,15 @@
+{#
+/**
+ * @file
+ * Block template for Home Page Slider block.
+ *
+ * This block ONLY renders referenced paragraphs.
+ * UI logic lives in paragraph + SDC.
+ */
+#}
+
+{% if content.field_home_page_slider_ref is not empty %}
+  <div class="home-page-slider-block">
+    {{ content.field_home_page_slider_ref }}
+  </div>
+{% endif %}
